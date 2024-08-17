@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="icon.css"/>
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+            width: 100%;
+            height:50px;
+            position: fixed;
+            left:0px;
+            right:0px;
+            top: 0px;
+            z-index: 1; /*어느것이 앞에 올것인가?*/
+        }
+        header>div{
+            display: flex;
+            flex-direction: row;
+            vertical-align: middle;
+            width: 500px;
+            height: 100%;
+        }
+        header>div>a{
+            text-align: center;
+            line-height: 50px;
+            width:100px;
+            color: white;
+            text-decoration-line: none;
+        }
+        header>div>a:hover{
+            
+            color: black;
+            background-color: grey;
+        }
+        
+        .container{
+            position: relative;
+            top: 50px;
+            left: 0px;
+            height: auto;
+            width: 100%;
+            margin-bottom: 50px;
+        }
+        .container>img{
+            width:100%;
+            height:100%;
+            object-fit: cover;
+        }
+        #over{
+            color: white;
+            font-size: large;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 70%;
+        }
+        main{
+            margin-top: 50px;
+        }
+        .section{            
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+            /*margin을 auto로 하면 좌우 공백을 자동으로 분배 (단auto를 사용하기 위해선 길이가 정의 되어야만함)*/
+            padding-top: 30px;
+            padding-bottom: 30px;
+            
+        }
+        .images{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        .images>div{
+            width: 30%;
+        }
+        .images>div>img{
+            width: 100%;
+        }
+        #months{
+            background-color: white;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        #months>div{
+            border: 1px solid grey;
+            padding: 10px;
+            text-align: left;
+        }
+        #months>div>p{
+             display: inline;
+             color: grey;
+        }
+        #months>div>div{
+             display: inline;
+             background-color: red;
+             margin-left: 10px;;
+             padding:5px;
+        }
+        .whitebox{
+            background-color: white;
+            color: black;
+        }
+        #contact{
+            display: flex;
+        }
+        #information{
+            margin-left: 20px;
+            margin-right: 20px;
+            text-align: left;
+            width: 50%;
+        }
+        #information>p{
+            margin:0;
+        }
+        #note{
+            margin-left: 20px;
+            margin-right: 20px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+        #note>div>input{
+            height: 35px;
+            margin: 5px;
+            border: 1px solid grey;
+            color: grey;
+        }
+        footer{
+            text-align: center;
+            color: grey;
+        }
+    </style>
+    <script>
+        function changeimage(){
+            let image = document.querySelector('#topimage');
+            if(image.alt === 'img1'){
+                image.alt = 'img2';
+                image.src = 'img2.png';
+            }
+            else if(image.alt === 'img2'){
+                image.alt = 'img3';
+                image.src = 'img3.png';
+            }
+            else{
+                image.alt = 'img1';
+                image.src = 'img1.png';
+            }
+        }
+        function changetext(){
+            let text = document.querySelector('#over');
+            if(text.textContent === 'LosAngeles'){
+                text.textContent = 'Chicago';
+            }
+            else if(text.textContent === 'Chicago'){
+                text.textContent = 'NewYork';
+            }
+            else{
+                text.textContent = 'LosAngeles';
+            }
+        }
+        setInterval(changetext, 5000);
+        setInterval(changeimage, 5000);
+    </script>
+</head>
+<body>
+    <header>
+        <div>
+        <a href="">HOME</a>
+        <a href="">BAND</a>
+        <a href="">TOUR</a>
+        <a href="">CONTACT</a>
+        <a href="">MORE</a>
+        </div>
+        <span class="material-symbols-outlined" style="color:white;">search</span>
+    </header>
+    <div class="container">
+        <img src="img1.png" alt="img1" id="topimage">
+        <div id="over">LosAngeles</div>
+    </div>
+    <main>
+        <div class="section">
+            <h1>The Band</h1>
+            <p>we love music<p>
+            <p style= "margin-left: 10px; margin-right: 10px;text-align: justify;">
+                We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div class="images">
+                <div >
+                    <p>Name</p><img src="member.png" alt="">
+                </div>
+                <div>
+                    <p>Name</p><img src="member.png" alt=""></div>
+                <div>
+                    <p>Name</p><img src="member.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div style="background-color: black;"> 
+        <div class = "section" style="color: white">
+            <h1 >TOUR DATES</h1>
+            <p>Remeber to book your tickets!</p>
+            <div id = "months">
+                <div><p>September</p><div>Sold out</div></div>
+                <div><p>October</p><div>Sold out</div></div>
+                <div><p>November</p></div>
+            </div>
+                
+            <div class = "images">
+                <div class="whitebox">
+                    <img src="NewYork.png" alt="">
+                    <p>New York</p>
+                    <p style="color:grey">Fri 27 Nov 2016</p>
+                </div>
+                <div class="whitebox">
+                    <img src="Paris.png" alt="">
+                    <p>Paris</p>
+                    <p style="color:grey">Sat 28 Nov 2016</p>
+                </div>
+                <div class="whitebox">
+                    <img src="SanFrancisco.png" alt="">
+                    <p>San Francisco</p>
+                    <p style="color:grey">Sun 29 Nov 2016</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        <div class="section">
+            <div style="margin-bottom: 30px;">
+                <h1>CONTACT</h1>
+                <p>Fan?Drop a note!</p>
+            </div>
+            <div id = "contact">
+                <div id="information">
+                    <p><span class="material-symbols-outlined">location_on</span>Chicago, US</p>
+                    <p><span class="material-symbols-outlined">call</span>Phone:+00 151515</p>
+                    <p><span class="material-symbols-outlined">mail</span>Email: mail@mail.com</p>
+                </div>
+                <div id="note">
+                    <div style ="display: flex;">
+                        <input type="text" value="Name" style="flex-grow:1">
+                        <input type="text" value="Email" style="flex-grow:1">
+                    </div>
+                    <div style ="display: flex;">
+                        <input type="text" value="Message" style="flex-grow:1" >
+                    </div>
+                    <div style ="text-align: right;">
+                        <input type="submit" value="SEND" style="background-color: black; color: white;;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <img src="location.png" alt="">
+        </div>
+    </main>
+    <footer>
+        <p>Powerd by <a href="https://www.w3schools.com/w3css/default.asp">W3</a></p>
+    </footer>
+</body>
+</html>
